@@ -28,7 +28,7 @@ nmap -sn 192.168.56.0/24
 nmap -sC -sV -Pn -vv 192.168.56.104
 
 ### 4. Directory Bruteforce
-dirb http://192.168.56.104 wordlist.txt -X .php,.html,.txt
+gobuster dir -u http://192.168.56.104 --wordlist /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
 
 ### 5. Hidden Page Discovery
 http://192.168.56.104/hidden_text
